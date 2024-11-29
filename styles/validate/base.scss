@@ -4,15 +4,14 @@
         height: auto;
     }
 
-    >:not(img) {
+    &>:not(img) {
         padding: 1rem;
-        list-style-image: url(../../public/images/icon-list.svg);
 
         input {
             padding: 1rem;
             width: 100%;
             border-radius: .5rem;
-            border: none;
+            border: 1px solid hsl(231, 7%, 60%);
         }
 
         input:active,
@@ -25,8 +24,16 @@
         padding: 0 3rem;
 
         li {
-            background-color: blue;
-            margin: .5rem .5rem;
+            position: relative;
+            margin: .5rem 0;
+            padding: 0;
+            list-style-type: none;
+
+            &::before {
+                content: url(../../public/images/icon-list.svg);
+                position: absolute;
+                left: -2rem;
+            }
         }
     }
 }
